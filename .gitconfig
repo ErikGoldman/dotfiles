@@ -1,0 +1,21 @@
+[core]
+	autocrlf = false
+	ignorecase = true
+
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    stat = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+	prom = pull --rebase origin master
+    prlocal = pull --rebase .
+
+[user]
+	email = erik@dropbox.com
+	name = Erik Goldman
+[push]
+	default = simple
