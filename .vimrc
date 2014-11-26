@@ -38,7 +38,10 @@ set mouse=a
 
 set background=dark
 
+" ****** PATHOGEN PLUGIN
+execute pathogen#infect()
 
+map <C-n> :NERDTreeToggle<CR>
 
 " don't have files trying to override this .vimrc:
 set nomodeline
@@ -66,6 +69,13 @@ autocmd BufRead *.py set smarttab
 autocmd BufRead *.py set expandtab
 autocmd BufRead *.py set softtabstop=2
 autocmd BufRead *.py set autoindent
+
+autocmd BufRead *.coffee set tabstop=2
+autocmd BufRead *.coffee set shiftwidth=2
+autocmd BufRead *.coffee set smarttab
+autocmd BufRead *.coffee set expandtab
+autocmd BufRead *.coffee set softtabstop=2
+autocmd BufRead *.coffee set autoindent
 
 " normally don't automatically format `text' as it is typed, IE only do this
 " with comments, at 79 characters:
@@ -106,15 +116,10 @@ autocmd FileType css set smartindent
 " alone when editing:
 autocmd FileType html set formatoptions+=tl
 
-" for both CSS and HTML, use genuine tab characters for indentation, to make
-" files a few bytes smaller:
-autocmd FileType html,css set noexpandtab tabstop=2
-
 " in makefiles, don't expand tabs to spaces, since actual tab characters are
 " needed, and have indentation at 8 chars to be sure that all indents are tabs
 " (despite the mappings later):
 autocmd FileType make set noexpandtab shiftwidth=8
-
 
 " * Search & Replace
 
